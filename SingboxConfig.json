@@ -12,7 +12,7 @@
       {"rule_set": ["geosite-cn", "geosite-steamcn", "geosite-apple"], "server": "local"}
     ],
     "final": "foreign",
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "independent_cache": true,
     "reverse_mapping": true
   },
@@ -38,18 +38,6 @@
     {"tag": "🍎 Apple", "type": "selector", "outbounds": ["🚀 默认代理", "🐸 手动选择", "♻️ 自动选择", "🎯 全球直连", "🇭🇰 香港手动", "🇹🇼 台湾手动", "🇰🇷 韩国手动", "🇯🇵 日本手动", "🇸🇬 新加坡手动", "🇮🇳 印度手动", "🇦🇪 阿联酋手动", "🇩🇪 德国手动", "🇨🇭 瑞士手动", "🇺🇲 美国手动", "🇦🇺 澳大利亚手动"]},
     {"tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🐸 手动选择", "♻️ 自动选择", "🎯 全球直连"]},
     
-    {"tag": "🇭🇰 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["港", "HK", "hk", "Hong Kong", "HongKong", "hongkong"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇯🇵 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["日本", "川日", "东京", "大阪", "泉日", "埼玉", "沪日", "深日", "JP", "Japan"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇺🇲 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["美", "波特兰", "达拉斯", "俄勒冈", "凤凰城", "费利蒙", "硅谷", "拉斯维加斯", "洛杉矶", "圣何塞", "圣克拉拉", "西雅图", "芝加哥", "US", "United States"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇹🇼 台湾自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["台", "新北", "彰化", "TW", "Taiwan"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇸🇬 新加坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡", "坡", "狮城", "SG", "Singapore"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇰🇷 韩国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["KR", "Korea", "KOR", "首尔", "韩", "韓"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇩🇪 德国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["德国", "德國", "DE", "Germany", "法兰克福", "Frankfurt"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇨🇭 瑞士自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["瑞士", "CH", "Switzerland", "苏黎世"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇮🇳 印度自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["印度", "IN", "India", "孟买"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇦🇺 澳大利亚自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["澳大利亚", "澳洲", "AU", "Australia", "Sydney", "悉尼"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇦🇪 阿联酋自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["迪拜", "Dubai", "UAE", "阿联酋"]}, {"action": "exclude", "keywords": ["免费"]}]},
-
     {"tag": "🇭🇰 香港手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["港", "HK", "hk", "Hong Kong", "HongKong", "hongkong"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇯🇵 日本手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["日本", "川日", "东京", "大阪", "泉日", "埼玉", "沪日", "深日", "JP", "Japan"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇺🇲 美国手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["美", "波特兰", "达拉斯", "俄勒冈", "凤凰城", "费利蒙", "硅谷", "拉斯维加斯", "洛杉矶", "圣何塞", "圣克拉拉", "西雅图", "芝加哥", "US", "United States"]}, {"action": "exclude", "keywords": ["免费"]}]},
@@ -60,8 +48,19 @@
     {"tag": "🇨🇭 瑞士手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["瑞士", "CH", "Switzerland", "苏黎世"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇮🇳 印度手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["印度", "IN", "India", "孟买"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇦🇺 澳大利亚手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["澳大利亚", "澳洲", "AU", "Australia", "Sydney", "悉尼"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "🇦🇪 阿联酋手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["迪拜", "Dubai", "UAE", "阿联酋"]}, {"action": "exclude", "keywords": ["免费"]}]}
-    
+    {"tag": "🇦🇪 阿联酋手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["迪拜", "Dubai", "UAE", "阿联酋"]}, {"action": "exclude", "keywords": ["免费"]}]},
+
+    {"tag": "🇭🇰 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["港", "HK", "hk", "Hong Kong", "HongKong", "hongkong"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇯🇵 日本自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["日本", "川日", "东京", "大阪", "泉日", "埼玉", "沪日", "深日", "JP", "Japan"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇺🇲 美国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["美", "波特兰", "达拉斯", "俄勒冈", "凤凰城", "费利蒙", "硅谷", "拉斯维加斯", "洛杉矶", "圣何塞", "圣克拉拉", "西雅图", "芝加哥", "US", "United States"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇹🇼 台湾自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["台", "新北", "彰化", "TW", "Taiwan"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇸🇬 新加坡自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡", "坡", "狮城", "SG", "Singapore"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇰🇷 韩国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["KR", "Korea", "KOR", "首尔", "韩", "韓"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇩🇪 德国自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["德国", "德國", "DE", "Germany", "法兰克福", "Frankfurt"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇨🇭 瑞士自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["瑞士", "CH", "Switzerland", "苏黎世"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇮🇳 印度自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["印度", "IN", "India", "孟买"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇦🇺 澳大利亚自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["澳大利亚", "澳洲", "AU", "Australia", "Sydney", "悉尼"]}, {"action": "exclude", "keywords": ["免费"]}]},
+    {"tag": "🇦🇪 阿联酋自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["迪拜", "Dubai", "UAE", "阿联酋"]}, {"action": "exclude", "keywords": ["免费"]}]}
   ],
   "route": {
     "rules": [
@@ -70,6 +69,7 @@
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
+      
       {"rule_set": ["BanAD", "BanProgramAD", "BanEasyList", "BanEasyListChina", "BanEasyPrivacy"], "outbound": "REJECT" },
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": ["Epic", "Origin", "Sony", "Steam", "Nintendo", "Blizzard"], "outbound": "🎮 游戏平台" },
@@ -89,7 +89,7 @@
       {"rule_set": "geoip-apple", "outbound": "🍎 Apple"},
       {"rule_set": "geoip-telegram", "outbound": "📲 Telegram"},
       {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
-      
+
       {"rule_set": "geosite-!cn", "outbound": "🚀 默认代理"},
       {"rule_set": "geosite-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
